@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <title>Chamber of Secrets</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div id="form">
+            <h1><span><img src="building.png" alt="Prédio"></span>Chamber of Secrets</h1>
+            <form method="POST" action="#" name='formulario'>
+                <div id="nomeSobrenomeInput" class="input">
+                    <div id="nome">
+                        <label class="label" for="firstName">Nome</label>
+                        <input type="text" id='firstName' name='firstName' required>
+                    </div>
+                    <div id="sobrenome">
+                        <label class="label" for="lastName">Sobrenome</label>
+                        <input type="text" id="lastName" name='lastName' required>
+                    </div>
+                </div>
+                <div id="emailInput" class="input">
+                    <label class="label" for="email">Email</label>
+                    <input type="email" id='email' name="email" required>
+                </div>
+                <div id="phoneInput" class="input search">
+                    <label class="select">
+                        <input type="text" value="+55" disabled>
+                    </label>
+                    <label class="label" for="phone">Telefone</label>
+                    <input type="text" id="phone" name="phone" required>
+                </div>
+                <div id="nascimentoInput" class="input">
+                    <label class="label" for="nascimento">Data de Nascimento</label>
+                    <input type="date" id="nascimento" name="nascimento" required>
+                </div>
+                <div id="neighborhoodInput" class="input search invalidInput">
+                    <label class="select">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <circle cx="10" cy="10" r="7"></circle>
+                            <line x1="21" y1="21" x2="15" y2="15"></line>
+                         </svg>
+                    </label>
+                    <label class="label" for="neighborhood">Bairro de Interesse</label>
+                    <input type="text" id="neighborhood" name="neighborhood" required>
+                    <div id="neighborSearch"></div>
+                </div>
+                <div id="contactPeriodInput" class="input">
+                    <label>Período para Contato</label>
+                    <div id="morning">
+                        <label for="morningPeriod">
+                            <input title="De manhã" type="radio" name="period" id="morningPeriod" value="morning" checked>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sunrise" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M3 17h1m16 0h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7m-9.7 5.7a4 4 0 0 1 8 0"></path>
+                                <line x1="3" y1="21" x2="21" y2="21"></line>
+                                <path d="M12 9v-6l3 3m-6 0l3 -3"></path>
+                            </svg>
+                            <span>Manhã</span>
+                        </label>
+                    </div>
+                    <div id="noon">
+                        <label for="noonPeriod">
+                            <input title="À tarde" type="radio" name="period" id="noonPeriod" value="noon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
+                            </svg>
+                            <span>Tarde</span>
+                        </label>
+                    </div>
+                    <div id="evening">
+                        <label for="eveningPeriod">
+                            <input title="À noite" type="radio" name="period" id="eveningPeriod" value="evening">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+                            </svg>
+                            <span>Noite</span>
+                        </label>
+                    </div>
+                </div>
+                <div id="acceptCallsVer" class="input">
+                    <label>Autoriza contato por telefone?</label>
+                    <div id="no">
+                        <label for="accept">
+                            <input type="radio" name="acceptCalls" id="accept" value="yes" checked>
+                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"></path>
+                                <path d="M15 6l2 2l4 -4"></path>
+                             </svg>
+                             <span>Sim</span>
+                        </label>
+                    </div>
+                    <div id="yes">
+                        <label for="dontAccept">
+                            <input type="radio" name="acceptCalls" id="dontAccept" value='no'>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"></path>
+                                <path d="M16 4l4 4m0 -4l-4 4"></path>
+                             </svg>
+                             <span>Não</span>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+            <p>
+                Não encontrou o que procurava?<br>
+                Preencha o formulário e retornaremos o contato.
+            </p>
+        </div>
+    </body>
+</html>

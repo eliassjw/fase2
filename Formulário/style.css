@@ -1,0 +1,339 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    user-select: none;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkslateblue;
+    min-width: 280px;
+}
+#form{
+    min-width: 280px;
+    width: 490px;
+    min-height: 650px;
+    height: auto;
+    padding: 40px;
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 2;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+}
+input[type='radio']{
+    display: none;
+}
+
+#nomeSobrenomeInput, #contactPeriodInput, #acceptCallsVer{
+    display: inline-flex;
+}
+#nomeSobrenomeInput{
+    justify-content: space-between;
+}
+#nomeSobrenomeInput div{
+    width: 49%;
+    position: relative;
+}
+.input{
+    position: relative;
+    width: 100%;
+    height: 55px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    transition: 0.3s height;
+}
+.input input{
+    border: 1px solid lightgray;
+    width: 100%;
+    height: 55px;
+    padding: 0 15px;
+    font-size: 20px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: transparent;
+}
+.input label{
+    position: absolute;
+    color: gray;
+    top: 50%; transform: translateY(-50%);
+    left: 15px;
+    font-size: 20px;
+    transition: 0.3s;
+    background-color: transparent;
+}
+.search input{
+    margin-left: 50px;
+    width: calc(100% - 50px);
+    border-radius: 0 5px 5px 0;
+    border-left: none;
+}
+.select input{
+    padding: 0;
+    padding-left: 15px;
+    margin: 0;
+    width: 100%;
+    border: none;
+    color: gray;
+}
+.search .select{
+    width: 50px;
+    height: 55px;
+    border: 1px solid lightgray;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    left: 0;
+    top: 0;
+    transform: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0s;
+}
+.search .select svg{
+    right: unset;
+    left: 5px;
+}
+.search label{
+    left: 65px
+}
+#morning label, #noon label, #evening label, #no label, #yes label{
+    position: unset;
+    width: auto;
+    height: 24px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    transition: 0s color;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+svg{
+    right: 10px;
+    position: relative;
+}
+#morning label:hover, #noon label:hover, #evening label:hover, #no label:hover, #yes label:hover,
+input[type='radio']:checked ~ *{
+    /* stroke: black; */
+    color: black;
+}
+
+#contactPeriodInput, #acceptCallsVer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+    padding-top: 10px;
+}
+#contactPeriodInput label, #acceptCallsVer label, #nascimentoInput label, .input label.activeLabel{
+    left: 10px;
+    top: -7px;
+    padding: 0 5px;
+    background-color: white;
+    font-size: 14px;
+    transform: none;
+}
+
+button{
+    width: 300px;
+    height: 50px;
+    background-color: darkslateblue;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: slateblue;
+}
+button:disabled{
+    background-color: lightgray;
+    color: gray;
+}
+
+h1 span img{
+    width: 50px;
+    height: 50px;
+}
+h1 span{
+    margin-right: 20px;
+}
+h1{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+p{
+    margin-top: 20px;
+    color: gray;
+}
+
+#neighborSearch{
+    /* width: calc(100% - 50px); */
+    width: 100%;
+    transition: 0.3s height;
+    border: 1px solid transparent;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    background-color: white;
+    height: 0;
+    z-index: 2;
+    position: relative;
+    top: 0;
+    text-align: left;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#neighborSearch::-webkit-scrollbar{
+    width: 4px;
+}
+#neighborSearch::-webkit-scrollbar-thumb{
+    background-color: darkslateblue;
+}
+#neighborSearch::-webkit-scrollbar-track{
+    background-color: rgba(105, 90, 205, 0.2);
+}
+#neighborSearch.openedSearch{
+    height: 120px;
+    border-color: lightgray;
+    overflow: auto;
+}
+#neighborSearch .option{
+    width: 100%;
+    height: 40px;
+    color: black;
+    font-size: 18px;
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+#neighborSearch .option:hover{
+    background-color: rgba(105, 90, 205, 0.1);
+}
+#neighborNotFound{
+    color: gray;
+    width: 70%;
+    margin-top: 50px;
+    justify-self: center;
+}
+
+.invalid{
+    height: 80px;
+}
+
+.invalid input, .invalid .select{
+    border-color: red;
+}
+.invalid .activeLabel{
+    color: red;
+}
+.invalid::after{
+    color: red;
+    height: 25px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+.neighbor::after{
+    content: 'Bairro informado inválido';
+}
+.age::after{
+    content: 'Você precisa ser maior de 18 anos';
+}
+.phoneNumber::after{
+    content: 'O número de telefone informado não é válido';
+}
+.birthday::after{
+    content: 'A data informada não é válida';
+}
+
+
+
+@media (max-width: 800px) {
+    
+    #form{
+        width: 100%;
+        height: 100%;
+        padding: 40px 20px 20px 20px;
+        border-radius: 0;
+    }
+    #morning label, #noon label, #evening label{
+        margin: 0;
+    }
+    #contactPeriodInput{
+        justify-content: space-around;
+    }
+}
+@media (max-width: 375px){
+    h1{
+        margin-bottom: 10px;
+    }
+    #form{
+        padding-top: 10px;
+    }
+}
+@media (max-width: 310px){
+    #form{
+        padding: 0;
+        padding-top: 20px;
+    }
+    h1{
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    h1 span img{
+        width: 40px;
+        height: 40px;
+    }
+    form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #contactPeriodInput{
+        flex-direction: column;
+        height: auto;
+    }
+    #contactPeriodInput div{
+        margin-bottom: 8px;
+    }
+    .input input, .input .label{
+        font-size: 18px;
+    }
+    .input, .input input, .input .select{
+        height: 45px;
+    }
+    .input{
+        margin-bottom: 10px;
+        width: 90%;
+    }
+    button{
+        width: 80%;
+        height: 40px;
+        font-size: 14px;
+    }
+    p{
+        margin-top: 10px;
+        font-size: 14px;
+        width: 90%;
+    }
+}
